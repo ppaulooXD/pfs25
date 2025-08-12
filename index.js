@@ -4,7 +4,7 @@ const server = express();
 
 server.set('view engine', 'ejs');
 
-server.use('/rota1', routerHome);
+server.use('/', routerHome);
 
 server.listen(5000, function(){
     console.log("Servidor em funcionamento!");
