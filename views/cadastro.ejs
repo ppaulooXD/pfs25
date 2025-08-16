@@ -1,0 +1,12 @@
+<a href="/carros">Voltar</a>
+<div>
+    <h1>Cadastrar novo veículo</h1>
+    <form method="POST" action="/cadastro">
+        <label for="carro">Nome do veículo</label><br/>
+        <input type="text" name="carro" id="carro"><br/>
+        <button>Gravar</button><br/>
+        <% if(typeof msgRetorno != "undefined") { %>
+            <span><%= msgRetorno %></span>
+        <%  } %>
+    </form>
+</div>
