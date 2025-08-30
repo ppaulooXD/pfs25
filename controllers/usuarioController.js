@@ -2,13 +2,19 @@ const UsuarioModel = require("../models/usuarioModel");
 
 class UsuarioController {
 
-    listarView(req, res) {
-        res.render('usuario/listar');
+    async listarView(req, res) {
+        let usuario = new UsuarioModel();
+        let lista = await usuario.listar();
+        res.render('usuario/listar', {usuarios: lista});
     }
 
     cadastrarView(req, res) {
-        let teste = new UsuarioModel();
-        teste.usuarioId(1);
+        //montagem via construtor
+        let teste = new UsuarioModel(0, 'paulo', 'ph@gmail.com', '123');
+
+        //montagem via setter
+        teste.usuarioSenha = '123';
+        teste.usuarioNome = 'nome';
         res.render('usuario/cadastrar');
     }
 
