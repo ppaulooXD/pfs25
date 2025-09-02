@@ -9,13 +9,11 @@ class UsuarioController {
     }
 
     cadastrarView(req, res) {
-        //montagem via construtor
-        let teste = new UsuarioModel(0, 'paulo', 'ph@gmail.com', '123');
-
-        //montagem via setter
-        teste.usuarioSenha = '123';
-        teste.usuarioNome = 'nome';
         res.render('usuario/cadastrar');
+    }
+
+    cadastrar(req, res) {
+        
     }
 
 }
